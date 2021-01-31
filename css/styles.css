@@ -6,6 +6,7 @@
   --hero-background-color: #2f303a;
   --primary-background: #ffffff;
   --secondary-background: #f5f4fa;
+  --primary-icon: #afb1b8;
 }
 
 body {
@@ -90,6 +91,23 @@ body {
   letter-spacing: 0.02em;
 }
 
+.header-contacts .item {
+  display: flex;
+  align-items: center;
+}
+
+.header-contacts .icon {
+  width: 20px;
+  height: 16px;
+  margin-right: 10px;
+  fill: currentColor;
+}
+
+.header-contacts .icon:hover,
+.header-contacts .icon:focus {
+  fill: currentColor;
+}
+
 .navigation .current {
   color: var(--accent-color);
 }
@@ -97,14 +115,26 @@ body {
 /* Hero */
 
 .hero {
-  background-color: var(--hero-background-color);
+  height: 600px;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero.jpg);
 
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   letter-spacing: 0.06em;
 }
 
 .hero h1 {
-  margin: 0;
+  margin: 0 0 40px;
 
   color: var(--secondary-accent-color);
 
@@ -112,6 +142,7 @@ body {
   font-size: 44px;
   line-height: 1.36;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .hero a {
@@ -131,6 +162,30 @@ body {
 
 /* Main index.html */
 
+.advantages .icon {
+  background-color: var(--secondary-background);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 120px;
+  width: 270px;
+}
+
+.advantages .antenna {
+  background-image: url(../images/antenna.svg);
+}
+
+.advantages .clock {
+  background-image: url(../images/clock.svg);
+}
+
+.advantages .diagramm {
+  background-image: url(../images/diagram.svg);
+}
+
+.advantages .astronaut {
+  background-image: url(../images/astronaut.svg);
+}
+
 .advantages {
   padding-top: 94px;
 }
@@ -144,7 +199,7 @@ body {
 }
 
 .advantages h3 {
-  margin: 0;
+  margin: 30px 0 0;
 
   color: var(--primary-text-color);
 
@@ -202,8 +257,6 @@ body {
 }
 
 .team .item {
-  padding-bottom: 30px;
-
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
@@ -219,7 +272,7 @@ body {
 }
 
 .team h3 {
-  margin: 30px 0 0;
+  margin: 0;
   color: var(--primary-text-color);
 
   font-weight: 500;
@@ -235,11 +288,109 @@ body {
   font-weight: 400;
 }
 
+.item-header {
+  padding: 30px 32px;
+}
+
+.social-network {
+  margin-top: 16px;
+}
+
+.social-network .network:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-network .link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  color: var(--primary-icon);
+  text-decoration: none;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-network .link:hover,
+.social-network .link:focus {
+  color: var(--primary-background);
+  background-color: var(--accent-color);
+}
+
+.social-network .icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.clients {
+  padding: 94px 0;
+}
+
+.client-links .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 90px;
+  border: 1px solid var(--primary-icon);
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: var(--primary-icon);
+}
+
+.client-links .link:hover,
+.client-links .link:focus {
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.client-links .icon {
+  width: 49px;
+  height: 44px;
+  fill: currentColor;
+}
+
+.client-links .client:not(:last-child) {
+  margin-right: 30px;
+}
+
 /* Footer */
 
-.site-footer .container {
+.footer-section {
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.footer-section:not(:last-child) {
+  margin-right: 70px;
+}
+
+.footer-section .social-network {
+  margin-top: 20px;
+  display: flex;
+}
+
+.footer-section .link {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-section .icon {
+  fill: var(--secondary-accent-color);
+}
+
+.footer-section p {
+  margin: 0;
+  padding-top: 7px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--secondary-accent-color);
 }
 
 .site-footer {
@@ -324,6 +475,12 @@ body {
   background-color: var(--primary-background);
   border: 1px solid #eeeeee;
   text-align: left;
+}
+
+.portfolio .item:hover,
+.portfolio .item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio {
